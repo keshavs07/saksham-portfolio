@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #111111;
+  --color-secondary: #1a1a1a;
+  --color-accent: #ffffff;
+  --color-muted: #888888;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+  @apply bg-primary text-accent font-sans antialiased;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary border border-primary rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted;
+}
+
+/* Base utility for hiding scrollbars on masonry/galleries if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
